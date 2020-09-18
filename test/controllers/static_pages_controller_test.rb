@@ -7,8 +7,14 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get root" do
-    get root_url
+    get root_path
     assert_response :success
-    assert_select "title", "instagram"
+    assert_select "title", "Home | instagram"
+  end
+
+  test "should get terms" do
+    get terms_path
+    assert_response :success
+    assert_select "title", "Terms | instagram"
   end
 end
